@@ -1,0 +1,35 @@
+{
+  "name": "project-planner",
+  "version": "1.0.0",
+  "description": "Turn project ideas and existing codebases into durable plans and phased implementation specifications.",
+  "author": {
+    "name": "yuanjuju",
+    "url": "https://github.com/yuanjuju"
+  },
+  "homepage": "https://github.com/yuanjuju/project-planner",
+  "repository": "https://github.com/yuanjuju/project-planner",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "project-planning",
+    "specifications",
+    "architecture"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Project Planner",
+    "shortDescription": "Create project plans and phased specs.",
+    "longDescription": "Create or update a durable PROJECT_PLAN.md and phased implementation specifications without writing product code.",
+    "developerName": "yuanjuju",
+    "category": "Productivity",
+    "capabilities": [
+      "Analysis",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Plan this project and create PROJECT_PLAN.md with phased specs.",
+      "Review this codebase and update its project plan.",
+      "Break this project idea into implementation-ready phases."
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Project Planner"
+  short_description: "Create durable project plans and phased specifications."
+  default_prompt: "Use $project-planner to turn my project idea into PROJECT_PLAN.md and phased specs."
+
+policy:
+  allow_implicit_invocation: true

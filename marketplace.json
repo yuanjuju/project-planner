@@ -1,0 +1,20 @@
+{
+  "name": "project-planner",
+  "interface": {
+    "displayName": "Project Planner"
+  },
+  "plugins": [
+    {
+      "name": "project-planner",
+      "source": {
+        "source": "local",
+        "path": "./plugins/project-planner"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
