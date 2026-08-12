@@ -10,13 +10,26 @@ Thank you for helping improve Project Planner.
 - Keep user-authored files safe: new instructions must never encourage silent overwrites.
 - Update the plugin version when behavior changes.
 
-Run the validators from a checkout that also has Codex's built-in creator tools available:
+Run the repository's dependency-free quality gates:
 
 ```bash
-python3 /path/to/skill-creator/scripts/quick_validate.py \
-  plugins/project-planner/skills/project-planner
-python3 /path/to/plugin-creator/scripts/validate_plugin.py \
-  plugins/project-planner
+make check
 ```
 
-Also try at least one greenfield prompt, one existing-repository prompt, and one prompt that should not trigger the skill.
+When Codex's built-in creator tools are available, also cross-check the package with `quick_validate.py` from `skill-creator` and `validate_plugin.py` from `plugin-creator`.
+
+## Behavior changes
+
+For changes to triggering, workflow, templates, or output rules:
+
+1. Update [`tests/trigger-cases.json`](tests/trigger-cases.json) when a trigger boundary intentionally changes.
+2. Replay the relevant cases in a fresh Codex task.
+3. Try at least one greenfield prompt and one existing-repository prompt.
+4. Confirm the skill creates planning artifacts only and preserves existing user content.
+5. Update `VERSION` and `CHANGELOG.md` for a release-worthy behavior change.
+
+See [`docs/evaluation.md`](docs/evaluation.md) for the full evaluation protocol.
+
+## Pull requests
+
+Keep commits focused and explain the planning failure mode the change addresses. Include the commands you ran and summarize forward-evaluation results. Do not include private repositories, generated credentials, or machine-specific paths in fixtures.

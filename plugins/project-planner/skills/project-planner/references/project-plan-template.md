@@ -2,7 +2,7 @@
 
 Use this as a menu, not a mandatory form. Omit inapplicable sections and preserve an existing project's terminology.
 
-```markdown
+````markdown
 # <Project name> plan
 
 ## Overview
@@ -93,7 +93,7 @@ Describe the project-wide testing layers, quality gates, and evidence required f
 | Risk | Impact | Mitigation or experiment |
 |---|---|---|
 | ... | ... | ... |
-```
+````
 
 ## Quality checks
 

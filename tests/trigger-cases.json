@@ -1,0 +1,98 @@
+[
+  {
+    "id": "greenfield-explicit-plan",
+    "prompt": "Create PROJECT_PLAN.md and phased specs for a privacy-first iOS expense tracker.",
+    "expected": "trigger",
+    "why": "Explicitly requests durable project-planning artifacts."
+  },
+  {
+    "id": "brownfield-plan",
+    "prompt": "Inspect this repository and create an implementation-ready phased plan for team workspaces.",
+    "expected": "trigger",
+    "why": "Requests repository inspection and phased planning before implementation."
+  },
+  {
+    "id": "update-existing-plan",
+    "prompt": "Update our PROJECT_PLAN.md and specs to cover an optional SQLite adapter.",
+    "expected": "trigger",
+    "why": "Explicitly updates the skill's durable outputs."
+  },
+  {
+    "id": "architecture-specification",
+    "prompt": "Before coding, architect this service and write phase-by-phase implementation specifications.",
+    "expected": "trigger",
+    "why": "Explicitly requests architecture planning and specifications."
+  },
+  {
+    "id": "chinese-greenfield-plan",
+    "prompt": "请为这个离线记账应用创建 PROJECT_PLAN.md，并按依赖关系拆成分阶段规格文件。",
+    "expected": "trigger",
+    "why": "A non-English request explicitly asks for the durable artifacts."
+  },
+  {
+    "id": "preserve-existing-documents",
+    "prompt": "Review our existing PROJECT_PLAN.md, preserve confirmed decisions, and add specs for multi-tenant isolation.",
+    "expected": "trigger",
+    "why": "Requests a safe update to an existing plan with a new phased concern."
+  },
+  {
+    "id": "cli-project-plan",
+    "prompt": "Plan this command-line backup tool before coding, including failure modes and phased acceptance criteria.",
+    "expected": "trigger",
+    "why": "Requests an implementation-ready plan for a non-client-server project."
+  },
+  {
+    "id": "library-migration-spec",
+    "prompt": "Write PROJECT_PLAN.md and phase specs for migrating this library from callbacks to async APIs without breaking consumers.",
+    "expected": "trigger",
+    "why": "Requests durable planning for a brownfield library migration."
+  },
+  {
+    "id": "quick-ideas",
+    "prompt": "Give me three quick ideas for a weekend app.",
+    "expected": "skip",
+    "why": "A short verbal brainstorm should not create repository artifacts."
+  },
+  {
+    "id": "direct-implementation",
+    "prompt": "Implement OAuth login in this repository.",
+    "expected": "skip",
+    "why": "Requests product code without asking for a planning artifact."
+  },
+  {
+    "id": "ordinary-task-tracking",
+    "prompt": "Turn these five chores into a checklist for today.",
+    "expected": "skip",
+    "why": "Ordinary task tracking is outside software project planning."
+  },
+  {
+    "id": "architecture-explanation",
+    "prompt": "Explain the architecture of this repository in chat.",
+    "expected": "skip",
+    "why": "Requests an explanation, not durable planning files."
+  },
+  {
+    "id": "chinese-direct-implementation",
+    "prompt": "直接帮我实现登录功能并运行测试。",
+    "expected": "skip",
+    "why": "A non-English prompt requests implementation without planning artifacts."
+  },
+  {
+    "id": "roadmap-in-chat-only",
+    "prompt": "In two sentences, what would a rough roadmap for this feature look like? Do not edit files.",
+    "expected": "skip",
+    "why": "Explicitly requests a quick verbal answer and forbids file edits."
+  },
+  {
+    "id": "review-existing-plan",
+    "prompt": "Review PROJECT_PLAN.md and tell me the three biggest risks. Do not change it.",
+    "expected": "skip",
+    "why": "Requests read-only review rather than creation or update of planning artifacts."
+  },
+  {
+    "id": "personal-trip-plan",
+    "prompt": "Plan a five-day trip to Kyoto with a daily schedule.",
+    "expected": "skip",
+    "why": "Planning outside a software project is not in scope."
+  }
+]

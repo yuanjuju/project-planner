@@ -1,0 +1,43 @@
+name: Behavior regression
+description: Report a triggering, planning, preservation, or output-quality regression.
+title: "[Behavior]: "
+labels:
+  - behavior
+body:
+  - type: markdown
+    attributes:
+      value: Do not paste private repository content, credentials, or personal data.
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Prompt
+      description: Provide a minimal prompt that reproduces the behavior.
+      placeholder: Use $project-planner to...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: Which artifacts, preservation rule, or trigger decision did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Describe the result without including private repository content.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Project Planner version
+      placeholder: v1.0.0
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Environment and notes
+      description: Codex surface/version, greenfield or existing repository, and any relevant constraints.
