@@ -77,6 +77,35 @@ class RepositoryValidatorTests(unittest.TestCase):
         readme.write_text(readme.read_text(encoding="utf-8") + private_path, encoding="utf-8")
         self.assert_has_error(validate_repository(self.copy), "machine-specific macOS user path")
 
+    def test_release_symlink_is_rejected(self) -> None:
+        (self.copy / "linked-readme.md").symlink_to(self.copy / "README.md")
+        self.assert_has_error(validate_repository(self.copy), "must not be symlinks")
+
+    def test_duplicate_trigger_id_is_rejected(self) -> None:
+        path = self.copy / "tests/trigger-cases.json"
+        cases = json.loads(path.read_text(encoding="utf-8"))
+        cases[1]["id"] = cases[0]["id"]
+        path.write_text(json.dumps(cases), encoding="utf-8")
+        self.assert_has_error(validate_repository(self.copy), "duplicates id")
+
+    def test_missing_negative_trigger_cases_is_rejected(self) -> None:
+        path = self.copy / "tests/trigger-cases.json"
+        cases = json.loads(path.read_text(encoding="utf-8"))
+        path.write_text(json.dumps([c for c in cases if c["expected"] == "trigger"]), encoding="utf-8")
+        self.assert_has_error(validate_repository(self.copy), "at least three 'skip' cases")
+
+    def test_duplicate_skill_metadata_is_rejected(self) -> None:
+        path = self.copy / "plugins/project-planner/skills/project-planner/SKILL.md"
+        text = path.read_text(encoding="utf-8")
+        path.write_text(text.replace("---\n", "---\nname: duplicate\n", 1), encoding="utf-8")
+        self.assert_has_error(validate_repository(self.copy), "duplicate frontmatter key")
+
+    def test_missing_ui_policy_is_rejected(self) -> None:
+        path = self.copy / "plugins/project-planner/skills/project-planner/agents/openai.yaml"
+        text = path.read_text(encoding="utf-8")
+        path.write_text("\n".join(line for line in text.splitlines() if "allow_implicit_invocation:" not in line), encoding="utf-8")
+        self.assert_has_error(validate_repository(self.copy), "missing or invalid policy.allow_implicit_invocation")
+
 
 if __name__ == "__main__":
     unittest.main()
