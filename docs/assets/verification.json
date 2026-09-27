@@ -1,0 +1,32 @@
+{
+  "scope": "Deterministic repository checks; no model behavior evaluation performed.",
+  "python": "3.9.6",
+  "package_validation_errors": [],
+  "tests_run": 12,
+  "tests_passed": [
+    "test_validate.RepositoryValidatorTests.test_broken_markdown_link_is_rejected",
+    "test_validate.RepositoryValidatorTests.test_duplicate_json_key_is_rejected",
+    "test_validate.RepositoryValidatorTests.test_duplicate_skill_metadata_is_rejected",
+    "test_validate.RepositoryValidatorTests.test_duplicate_trigger_id_is_rejected",
+    "test_validate.RepositoryValidatorTests.test_machine_specific_path_is_rejected",
+    "test_validate.RepositoryValidatorTests.test_marketplace_path_escape_is_rejected",
+    "test_validate.RepositoryValidatorTests.test_missing_negative_trigger_cases_is_rejected",
+    "test_validate.RepositoryValidatorTests.test_missing_ui_policy_is_rejected",
+    "test_validate.RepositoryValidatorTests.test_placeholder_is_rejected",
+    "test_validate.RepositoryValidatorTests.test_release_symlink_is_rejected",
+    "test_validate.RepositoryValidatorTests.test_repository_passes",
+    "test_validate.RepositoryValidatorTests.test_version_drift_is_rejected"
+  ],
+  "trigger_corpus_counts": {
+    "skip": 8,
+    "trigger": 8
+  },
+  "model_forward_evaluation": "not_run",
+  "source_sha256": {
+    "scripts/validate.py": "f4a2f0add65d274670698518a43a5bc601f3cd7d5ffce5b227b6e597bc657fb4",
+    "tests/test_validate.py": "b0b3348907b727705e85b50f3064338cd38985920b377656488f3cf10fee0c02",
+    "tests/trigger-cases.json": "e7b20819c09c1cac7edbe8e83ca8abd112510a087b795132fa0213e3d9c2951f",
+    "plugins/project-planner/skills/project-planner/SKILL.md": "a59454487ecc61e5a8bf34a01bc6efbab6528947a89e2b13a1d7aa3e3cb6ab7c",
+    "plugins/project-planner/skills/project-planner/agents/openai.yaml": "96a994989b8448d55655ae769d4e8fe267f4c4ba759adc970d70e10b51dd0d7c"
+  }
+}
